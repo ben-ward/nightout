@@ -46,3 +46,4 @@ group :development do
 end
 
 gem 'google_places'
+gem 'bootstrap-sass', '~> 3.3.5'
