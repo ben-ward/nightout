@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  owner: MyString
+  time: 2015-10-24 09:53:52
+  deadline: 2015-10-24 09:53:52
+
+two:
+  name: MyString
+  owner: MyString
+  time: 2015-10-24 09:53:52
+  deadline: 2015-10-24 09:53:52
