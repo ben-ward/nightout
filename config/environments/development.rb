@@ -38,4 +38,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  ENV['API_KEY'] = 'AIzaSyCG6W3vSxP9PNdC2xipevPrv_y2UNRkcZ8'
 end
