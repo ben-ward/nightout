@@ -1,14 +1,29 @@
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+<div class="container">
+  <div class="row">
+    <p>
+      <strong>Name:</strong>
+      <%= @event.name %>
+    </p>
 
-<p>
-  <strong>Time:</strong>
-  <%= @event.time %>
-</p>
+    <p>
+      <strong>Time:</strong>
+      <%= @event.time %>
+    </p>
 
-<p>
-  <strong>Deadline:</strong>
-  <%= @event.deadline %>
-</p>
+    <p>
+      <strong>Deadline:</strong>
+      <%= @event.deadline %>
+    </p>
+    <% @event.destinations.each do |place| %>
+        <div class='place'>
+          <div class='place_title'><%= place.name %></div>
+          <div class='place_address'><%= place.vicinity %></div>
+        </div>
+    <% end %>
+    <div class='well'>
+      <h3>Share this link</h3>
+      <%= request.original_url %>
+    </div>
+  </div>
+</div>
+

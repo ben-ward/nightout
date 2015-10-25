@@ -20,6 +20,7 @@ class EventsController < ApplicationController
         name: place.name,
         latitude: place.lat,
         longitude: place.lng,
+        vicinity: place.vicinity,
         address1: nil,
         address2: nil,
         city: nil,
