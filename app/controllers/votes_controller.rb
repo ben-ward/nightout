@@ -13,16 +13,6 @@ class VotesController < ApplicationController
         to: '+18082805484',
         body: "Nice! We have decided to go to #{@event.destinations.order('vote_count DESC').first.name} Call an Uber here. #{event_url(@event)}"
       )
-      @twilio_client.messages.create(
-        from: '+18084950075',
-        to: '+18082800766',
-        body: "Nice! We have decided to go to #{@event.destinations.order('vote_count DESC').first.name} Call an Uber here. #{event_url(@event)}"
-      )
-      @twilio_client.messages.create(
-        from: '+18084950075',
-        to: '+16126007305',
-        body: "Nice! We have decided to go to #{@event.destinations.order('vote_count DESC').first.name} Call an Uber here. #{event_url(@event)}"
-      )
     end
     respond_to do |format|
       format.html { redirect_to event_path(@destination.event), notice: 'Thanks for your vote' }
