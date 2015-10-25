@@ -15,3 +15,14 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.place {
+  height: 50px;
+  border: 1px solid lightgrey;
+  padding: 5px;
+}
+
+.place_group {
+  height:400px;
+  overflow: scroll;
+}

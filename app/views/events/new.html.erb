@@ -2,18 +2,43 @@
   <div class="row">
     <%= form_for @event do |f| %>
       <div class="form-group">
-        <%= f.label :name %><br>
-        <%= f.text_field :name, class:'form-control' %>
+        <%= f.text_field :name, placeholder:'Name', class:'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :time %><br>
-        <%= f.text_field :time, class:'form-control' %>
+        <%= f.text_field :time, placeholder:'Time', class:'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :deadline %><br>
-        <%= f.text_field :deadline, class:'form-control' %>
+        <%= f.text_field :deadline, placeholder:'Deadline', class:'form-control' %>
       </div>
-      <%= f.submit class:'btn btn-default'%>
+      <div class="form-group place_group">
+        <% @places.each do |place| %>
+            <div id="<%= place.id %>" class='place'>
+              <div class='add_place btn btn-success pull-right'>Add</div>
+              <div class='place_title'><%= place.name %></div>
+              <div class='place_address'><%= place.vicinity %></div>
+            </div>
+        <% end %>
+      </div>
+      <%= f.hidden_field :place_ids, value:'adsfa' %>
+      <%= f.submit class:'btn btn-success', style:'width:100%'%>
     <% end %>
   <div>
 <div>
+
+<script type="text/javascript">
+  $(".add_place").click(function(e) {
+    if (this.innerHTML == 'Add') {
+      $(this).addClass('active').addClass('btn-danger').removeClass('btn-primary');
+      this.innerHTML = 'Remove';
+    } else {
+      $(this).removeClass('active').addClass('btn-primary').removeClass('btn-danger');
+      this.innerHTML = 'Add';
+    }
+    var place_ids = []
+    $('.place_group .active').each(function(i, obj) {
+        place_ids.push(this.parentElement.id);
+    });
+    $('#event_place_ids').val(place_ids);
+  });
+</script>
+

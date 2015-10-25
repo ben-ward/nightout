@@ -5,6 +5,8 @@ class EventsController < ApplicationController
   end
 
   def new
+    @client = GooglePlaces::Client.new(ENV['API_KEY'])
+    @places = @client.spots(20.7508119,-156.4401073, :types => ['restaurant','food','cafe','bars'])
     @event = Event.new()
   end
 
