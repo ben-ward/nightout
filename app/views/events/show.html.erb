@@ -14,7 +14,7 @@
       <strong>Deadline:</strong>
       <%= @event.deadline %>
     </p>
-    <% @event.destinations.each do |place| %>
+    <% @event.destinations.order('vote_count DESC').each do |place| %>
         <div class='place'>
           <div class='place_vote pull-right'> Vote:
             <%= link_to place.votes.count, votes_path(destination_id: place.id), method: :post, class: 'btn btn-primary' %>
@@ -23,10 +23,6 @@
           <div class='place_address'><%= place.vicinity %></div>
         </div>
     <% end %>
-    <div class='well'>
-      <h3>Share this link</h3>
-      <%= request.original_url %>
-    </div>
   </div>
 </div>
 
