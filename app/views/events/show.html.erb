@@ -16,6 +16,9 @@
     </p>
     <% @event.destinations.each do |place| %>
         <div class='place'>
+          <div class='place_vote pull-right'>
+            <%= link_to place.votes.count, votes_path(destination_id: place.id), method: :post, class: 'btn btn-primary' %>
+          </div>
           <div class='place_title'><%= place.name %></div>
           <div class='place_address'><%= place.vicinity %></div>
         </div>
