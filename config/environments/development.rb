@@ -47,4 +47,5 @@ Rails.application.configure do
   ENV['TWILIO_AUTH_TOKEN'] = '8de692546affd88173a5e838e2169642'
   ENV['UBER_CLIENT_ID'] = 'HfgWL_GOtH1t3Rf43A2ALzotAjZvLalt'
   ENV['UBER_SERVER_TOKEN'] = 'Y9rDtMchAXAqO8__9PC6motGvRU2cN0eDOKC_D6B'
+  ENV['UBER_CLIENT_SECRET'] = 'cz4OuhtbrzXCLbYlReouYGm5I_FVbRprNQdHKqGP'
 end

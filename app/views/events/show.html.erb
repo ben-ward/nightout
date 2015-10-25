@@ -20,10 +20,7 @@
           <div class='place_vote pull-right'>
             <% if @event.votes.count >= 4 %>
               <% if first %>
-                <% first = false %>
                 Winner!
-                <a class="btn btn-primary" href="uber://?client_id=<%= ENV['UBER_CLIENT_ID'] %>&action=setPickup&pickup=my_location&dropoff[latitude]=<%= place.latitude %>&dropoff[longitude]=<%= place.longitude %>&dropoff[nickname]=<%= place.name %>&dropoff[formatted_address]=<%= place.vicinity %>">
-                Call Uber</a>
               <% end %>
               <div class='btn btn-default'>
                 <%= place.votes.count %>
@@ -35,7 +32,21 @@
           <div class='place_title'><%= place.name %></div>
           <div class='place_address'><%= place.vicinity %></div>
         </div>
-    <% end %>
+        <% if @event.votes.count >= 4 && first %>
+          <% first = false %>
+          <div>
+            <% place.price_estimate['prices'].each do |price| %>
+              <div class='price_estimate'>
+                <div class='pull-right'>
+                  <a class="btn btn-primary" href="uber://?client_id=<%= ENV['UBER_CLIENT_ID'] %>&action=setPickup&pickup=my_location&dropoff[latitude]=<%= place.latitude %>&dropoff[longitude]=<%= place.longitude %>&dropoff[nickname]=<%= place.name %>&dropoff[formatted_address]=<%= place.vicinity %>&product_id=<%= price['product_id'] %>">
+                  <%= price['display_name'] %></a>
+                </div>
+                <div><%= price['estimate'] %></div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
   </div>
 </div>
 

@@ -16,6 +16,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.price_estimate,
 .place {
   height: 50px;
   border: 1px solid lightgrey;
@@ -34,3 +35,4 @@
 .bg-yellow {
   background: rgb(250, 255, 140);
 }
+
