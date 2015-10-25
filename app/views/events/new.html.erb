@@ -12,14 +12,14 @@
       </div>
       <div class="form-group place_group">
         <% @places.each do |place| %>
-            <div id="<%= place.id %>" class='place'>
+            <div id="<%= place.place_id %>" class='place'>
               <div class='add_place btn btn-success pull-right'>Add</div>
               <div class='place_title'><%= place.name %></div>
               <div class='place_address'><%= place.vicinity %></div>
             </div>
         <% end %>
       </div>
-      <%= f.hidden_field :place_ids, value:'adsfa' %>
+      <%= f.hidden_field :place_ids, value:'' %>
       <%= f.submit class:'btn btn-success', style:'width:100%'%>
     <% end %>
   <div>
