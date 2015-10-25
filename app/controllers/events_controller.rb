@@ -1,3 +1,4 @@
+require 'twilio-ruby'
 class EventsController < ApplicationController
 
   def show
@@ -35,6 +36,12 @@ class EventsController < ApplicationController
         postal: nil
       )
     end
+    @twilio_client = Twilio::REST::Client.new
+    @twilio_client.messages.create(
+      from: '+18084950075',
+      to: '+18082805484',
+      body: "Hi. Ben sent you a Nightout request. Click here to Vote #{event_url(@event)}"
+    )
     respond_to do |format|
       format.html { redirect_to event_path(@event), notice: 'Event created' }
       format.json {

@@ -41,4 +41,6 @@ Rails.application.configure do
   config.action_controller.allow_forgery_protection = false
 
   ENV['API_KEY'] = 'AIzaSyCG6W3vSxP9PNdC2xipevPrv_y2UNRkcZ8'
+  ENV['TWILIO_ACCOUNT_SID'] = 'AC9b974b17834f18e7e56afd808f6e9e86'
+  ENV['TWILIO_AUTH_TOKEN'] = '722cc6b753e02cb07453c0e8a185f133'
 end

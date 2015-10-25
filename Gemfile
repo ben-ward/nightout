@@ -48,3 +48,4 @@ end
 gem 'google_places'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'active_model_serializers'
+gem 'twilio-ruby', '~> 4.2.1'
