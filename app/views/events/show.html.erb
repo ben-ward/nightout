@@ -14,10 +14,31 @@
       <strong>Deadline:</strong>
       <%= @event.deadline %>
     </p>
+    <% first = true %>
     <% @event.destinations.order('vote_count DESC').each do |place| %>
-        <div class='place'>
-          <div class='place_vote pull-right'> Vote:
-            <%= link_to place.votes.count, votes_path(destination_id: place.id), method: :post, class: 'btn btn-primary' %>
+        <div class='place <%= "bg-yellow" if @event.votes.count >= 4 && first %>'>
+          <div class='place_vote pull-right'>
+            <% if @event.votes.count >= 4 %>
+              <% if first %>
+                <% first = false %>
+                Winner!
+                <a class="btn btn-primary" href="https://m.uber.com/?client_id=<%= ENV['UBER_CLIENT_ID'] %>
+                &first_name=myFirstName&last_name=myLastName&email=test@example.com
+                &country_code=us&mobile_country_code=%2B1&mobile_phone=123-456-7890
+                &zipcode=94111&product_id=a1111c8c-c720-46c3-8534-2fcdd730040d&pickup_latitude=37.775818
+                &pickup_longitude=-122.418028&pickup_nickname=Uber%20HQ
+                &pickup_address=1455%20Market%20St%2C%20San%20Francisco%2C%20CA%2094103
+                &dropoff_latitude=37.802374&dropoff_longitude=-122.405818
+                &dropoff_nickname=Coit%20Tower
+                &dropoff_address=1%20Telegraph%20Hill%20Blvd%2C%20San%20Francisco%2C%20CA%2094133">
+                Call Uber</a>
+              <% end %>
+              <div class='btn btn-default'>
+                <%= place.votes.count %>
+              </div>
+            <% else %>
+              Vote: <%= link_to place.votes.count, votes_path(destination_id: place.id), method: :post, class: 'btn btn-primary' %>
+            <% end %>
           </div>
           <div class='place_title'><%= place.name %></div>
           <div class='place_address'><%= place.vicinity %></div>
