@@ -2,6 +2,12 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json {
+        render json: @event, serializer: EventSerializer
+      }
+    end
   end
 
   def new
@@ -29,7 +35,12 @@ class EventsController < ApplicationController
         postal: nil
       )
     end
-    redirect_to event_path(@event), notice: 'Event created'
+    respond_to do |format|
+      format.html { redirect_to event_path(@event), notice: 'Event created' }
+      format.json {
+        render json: @event, serializer: EventSerializer
+      }
+    end
   end
 
   private
