@@ -22,7 +22,7 @@
               <% if first %>
                 <% first = false %>
                 Winner!
-                <a class="btn btn-primary" href="uber://?client_id=<%= ENV['UBER_CLIENT_ID'] %>&action=setPickup&dropoff[latitude]=<%= place.latitude %>&dropoff[longitude]=<%= place.longitude %>&dropoff[nickname]=<%= place.name %>&dropoff[formatted_address]=<%= place.vicinity %>">
+                <a class="btn btn-primary" href="uber://?client_id=<%= ENV['UBER_CLIENT_ID'] %>&action=setPickup&pickup=my_location&dropoff[latitude]=<%= place.latitude %>&dropoff[longitude]=<%= place.longitude %>&dropoff[nickname]=<%= place.name %>&dropoff[formatted_address]=<%= place.vicinity %>">
                 Call Uber</a>
               <% end %>
               <div class='btn btn-default'>
