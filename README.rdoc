@@ -1,5 +1,22 @@
 == README
 
-Uber/Devleague Hackathon 2015 winning submission
+Uber/Devleague Hackathon 2015 (http://uberhackathon.devleague.com) winning submission
 
-http://nightout-hi.herokuapp.com/
+Do you have passive agressive friends who can't agree where to go on a nightout? Put it to vote!
+
+Nightout is a quick way to vote on where to spend your night out and get around safely with Uber.
+
+Video: https://youtu.be/Udlu8fKT4Eg
+
+Demo: http://nightout-hi.herokuapp.com/
+
+Integrations:
+
+Google Places
+Twilio (SMS)
+Uber for estimates and getting a car to the destination
+Stack
+
+Rails: 4.2.4
+Ruby 2.0.0
+Postgres
