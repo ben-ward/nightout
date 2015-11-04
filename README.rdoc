@@ -11,12 +11,11 @@ Video: https://youtu.be/Udlu8fKT4Eg
 Demo: http://nightout-hi.herokuapp.com/
 
 Integrations:
--Google Places
--Twilio (SMS)
-
-Uber for estimates and getting a car to the destination
+- Google Places
+- Twilio (SMS)
+- Uber for estimates and getting a car to the destination
 
 Stack
--Rails: 4.2.4
--Ruby 2.0.0
--Postgres
+- Rails: 4.2.4
+- Ruby 2.0.0
+- Postgres
